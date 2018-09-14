@@ -1,0 +1,159 @@
+while True :
+    a = input("press 1 to start: ")
+    if a == "1" :
+        break
+    else:
+        print("input error")
+print("-------------------")
+print("you wake up in one room")
+print("In the room there is no light. Can not see anything")
+while True :
+    a = input("press i to show item inventory: ")
+    if a == "i" :
+        break
+    else:
+        print("input error")    
+inven = ["flashlight"]
+print(inven)
+print("press use + item in inventory")
+print("Ex. 'use flashlight'")
+while True :
+    a = input("you try :")
+    ans = "use " + inven[0]
+    if a == ans :
+        inven.remove(inven[0])
+        break
+    elif inven[0] in a :
+        print("you can use with 'use flashlight'")
+    
+    else:
+        print("input error")    
+while True :
+    a = input("you see switch on the wall you can open (y/n): ")
+    if a == "n" :
+        print("you so stupid")
+    elif a == "y" :
+        break
+    else :
+        print("input error") 
+print("ok you finish practice mode ")
+print("target : you exit form the house")
+get = 0
+opened = 0
+while opened == 0 :
+    print("center room")
+    a = input("a) go to table, b) go to the door: ")
+    if a == "a" :
+        if get == 0 :
+            print("you get redkey")
+            get = 1
+            inven.append("redkey")
+        else :
+            print("Nothing happened")
+    elif a == "b" :
+        print("the door is lock you can go back")
+        while True :
+            a = input("a) back, or you take action: ")
+            if a == "a" :
+                print("move back")
+                break
+            elif a == "use redkey" :
+                opened = 1
+                inven.remove("redkey")
+                break
+            elif a == "i" :
+                print(inven)            
+            else :
+                print("input error") 
+    elif a == "i" :
+        print(inven)    
+    else :
+        print("input error") 
+print("the door is open and you get out the room")
+get = 0 
+opened2 = 0
+while opened2 == 0 :
+    print("center house")
+    a = input("a) go to room left, b) go to room right, c) go to exit door: ")
+    if a == "a" :
+        if get == 0 :
+            print("you find keyboard and get it after that you back to center house")
+            inven.append("keyboard")
+            get = 1
+        else :
+            print("Nothing happened")     
+    elif a == "b" :
+        print("you find computer cpu mouse but these is not ...... so you can not use computer")
+        while True :
+            a = input("a) back, or you take action: ")
+            if a == "a" :
+                print("move back")
+                break
+            elif a == "use keyboard":
+                print("ok computer can use then display qestion on screen")
+                while True :
+                    print("fish = 2, eight = 3 then triangle * character M = ??? or a) go back ")
+                    a = input("a) or ans: ")
+                    if a == "a" :
+                        break
+                    elif a == "i" :
+                        print(inven)                     
+                    elif a == "7" :
+                        print("yes. you get the paper code")
+                        inven.append("paper code")
+                        break
+                    elif a == "use paper code" :
+                        print("you can find digits")
+                        print(" no theNote atHere!")
+                        print("see d d u na jaHen it!")
+                        print("       cr.tanarak 0336")                      
+                    elif a.isdigit() :
+                        print("No.")
+                    else :
+                        print("input error")
+            elif a == "i" :
+                print(inven)
+            elif a == "use paper code" :
+                print("you can find digits")
+                print(" no theNote atHere!")
+                print("see d d u na jaHen it!")
+                print("       cr.tanarak 0336")                
+            else :
+                print("input error")
+    elif a == "c" :
+        print("you can open it with 4 digits number for password open the door")
+        while True :
+            a = input("a) back, or you input 4 digits: ")
+            if a == "a" :
+                print("move back")
+                break
+            elif a == "i" :
+                print(inven) 
+            elif a == "use keyboard" :
+                print("Nothing happened")            
+            elif a == "1410" :
+                opened2 = 1
+                break
+            elif a == "0336" :
+                print("Gu mai stupid aow password write hai mueng trong trong rok buffalo")
+            elif a == "use paper code" :
+                print("you can find digits")
+                print(" no theNote atHere!")
+                print("see d d u na jaHen it!")
+                print("       cr.tanarak 0336")              
+            elif a.isdigit() :
+                print("No.")
+            else :
+                print("input error")        
+    elif a == "i" :
+        print(inven)
+    elif a == "use paper code" :
+        print("you can find digits")
+        print(" no theNote atHere!")
+        print("see d d u na jaHen it!")
+        print("       cr.tanarak 0336")
+    elif a == "use keyboard" :
+        print("Nothing happened")
+    else :
+        print("input error")    
+print("the door is open congratulate you comple demo play in chapter 1")
